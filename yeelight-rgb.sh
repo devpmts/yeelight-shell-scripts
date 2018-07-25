@@ -65,6 +65,6 @@ if [[ -z "$color" ]]; then
 	usage
 	exit 1
 fi
-color='"method":"set_rgb","params":['$color',"smooth",200]'
+color='"method":"set_rgb","params":['$color',"smooth",5000]'
 
 $( dirname $0 )/yeelight.sh "$1" "$color"

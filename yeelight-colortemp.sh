@@ -13,6 +13,6 @@ usage(){
 [[ ! "$1" =~ ^[0-9]+$ ]] && echo "ERROR: $IDMSG" && exit 1
 [[ ! "$2" =~ ^[0-9]+$ || "$2" -lt 1700 || "$2" -gt 6500 ]] && echo "ERROR: $CTMSG" && exit 1
 
-ct='"method":"set_ct_abx","params":['$2',"smooth",200]'
+ct='"method":"set_ct_abx","params":['$2',"smooth",5000]'
 
 $( dirname $0 )/yeelight.sh "$1" "$ct"

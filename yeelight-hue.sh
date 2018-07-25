@@ -16,6 +16,6 @@ usage(){
 [[ ! "$2" =~ ^[0-9]+$ || "$2" -gt 359 ]] && echo "ERROR: $HUEMSG" && exit 1
 [[ ! "$3" =~ ^[0-9]+$ || "$3" -gt 100 ]] && echo "ERROR: $BRIMSG" && exit 1
 
-ct='"method":"set_hsv","params":['$2','$3',"smooth",200]'
+ct='"method":"set_hsv","params":['$2','$3',"smooth",5000]'
 
 $( dirname $0 )/yeelight.sh "$1" "$ct"

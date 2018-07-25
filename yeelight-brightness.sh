@@ -13,6 +13,6 @@ usage(){
 [[ ! "$1" =~ ^[0-9]+$ ]] && echo "ERROR: $IDMSG" && exit 1
 [[ ! "$2" =~ ^[0-9]+$ || "$2" -gt 100 ]] && echo "ERROR: $BRIMSG" && exit 1
 
-ct='"method":"set_bright","params":['$2',"smooth",200]'
+ct='"method":"set_bright","params":['$2',"smooth",5000]'
 
 $( dirname $0 )/yeelight.sh "$1" "$ct"

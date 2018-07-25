@@ -16,7 +16,8 @@ fn_send() {
   ping -c1 -W1 $ip > /dev/null
   if [ $? -eq 0 ]
   then 
-  	  echo "Executing on ID $1 [$ip] ...  " $@
+  	  echo "Executing on ID $1 [$ip] ...  " $@ 
+	  echo  "{\"id\":1,$2}\r\n" >/dev/tcp/$ip/55443
 	  printf "{\"id\":1,$2}\r\n" >/dev/tcp/$ip/55443
   else
 	  echo "$ip not available"
